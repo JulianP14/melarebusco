@@ -79,11 +79,11 @@ const Cotizacion = () => {
             <div className="flex items-center gap-8 text-xl py-4">
               <div className="flex-col text-lg font-semibold text-black hover:text-xl transition-all">
                 <p>Compra:</p>
-                <p>${dollarBlueFixed}</p>
+                <p>${dollarBlueBidFixed}</p>
               </div>
               <div className="flex-col text-lg font-semibold text-black hover:text-xl  transition-all">
                 <p>Venta:</p>
-                <p>${dollarBlueBidFixed}</p>
+                <p>${dollarBlueFixed}</p>
               </div>
             </div>
           </div>
