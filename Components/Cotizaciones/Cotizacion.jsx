@@ -88,11 +88,11 @@ const Cotizacion = () => {
             </div>
           </div>
         </div>
-        <div className="md:flex md:flex-wrap md:gap-4 items-center justify-center max-w-[1024px]">
+        <div className="md:flex md:flex-wrap md:gap-4 items-center justify-center max-w-[900px]">
           {dollars.map(({ id, name, dollar }) => (
             <div
               key={id}
-              className=" w-[350px] border-t-2 border-green-800 rounded-lg px-5 py-4 my-4 shadow-xl"
+              className=" w-[300px] border-t-2 border-green-800 rounded-lg px-5 py-4 my-4 shadow-xl"
             >
               <div className="flex flex-col items-center">
                 <h2 className="text-2xl border-b-2 rounded-lg border-green-800 bg-gradient-to-r from-[#101419] via-70% to-[#168374] bg-clip-text text-transparent font-bold">{name}</h2>

@@ -7,15 +7,15 @@ const Impuestos = ({ valueInput, dollarFixed, isUsd }) => {
   /* Renderizado en ARS */
   const dolarSinImp = Number(valueInput);
   const impuestoPais = Number(dolarSinImp * .3);
-  const impuestoGanancias = Number(dolarSinImp * 1);
+  const impuestoGanancias = Number(dolarSinImp * .3);
   const impuestoQatar = Number(dolarSinImp * .05);
-  const impuestoBsPs = Number(dolarSinImp * .25)
+  const impuestoBsPs = Number(dolarSinImp * 0)
   /* Renderizado en USD */
   const dolarSinImpUsd = Number(valueInput * dollarFixed);
   const impuestoPaisUsd = Number(dolarSinImpUsd * .3);
-  const impuestoGananciasUsd = Number(dolarSinImpUsd * 1);
+  const impuestoGananciasUsd = Number(dolarSinImpUsd * .3);
   const impuestoQatarUsd = Number(dolarSinImpUsd * .05);
-  const impuestoBsPsUsd = Number(dolarSinImpUsd * .25)
+  const impuestoBsPsUsd = Number(dolarSinImpUsd * 0)
 
   const sumaTotal = () => {
     let total = dolarSinImp + impuestoPais + impuestoGanancias + impuestoBsPs;
@@ -53,11 +53,11 @@ const Impuestos = ({ valueInput, dollarFixed, isUsd }) => {
               <p>{formatMoney.format(impuestoPaisUsd)}</p>
             </div>
             <div className="flex justify-between w-full">
-              <p>+ Imp. Bienes Personales 25%:</p>
+              <p>+ Imp. Bienes Personales 0%:</p>
               <p>{formatMoney.format(impuestoBsPsUsd)}</p>
             </div>
             <div className="flex justify-between w-full">
-              <p>+ Imp. Ganancias 100%:</p>
+              <p>+ Imp. Ganancias 30%:</p>
               <p>{formatMoney.format(impuestoGananciasUsd)}</p>
             </div>
           </div>
@@ -98,11 +98,11 @@ const Impuestos = ({ valueInput, dollarFixed, isUsd }) => {
               <p>{formatMoney.format(impuestoPais)}</p>
             </div>
             <div className="flex justify-between w-full">
-              <p>+ Imp. Bienes Personales 25%:</p>
+              <p>+ Imp. Bienes Personales 0%:</p>
               <p>{formatMoney.format(impuestoBsPs)}</p>
             </div>
             <div className="flex justify-between w-full">
-              <p>+ Imp. Ganancias 100%:</p>
+              <p>+ Imp. Ganancias 30%:</p>
               <p>{formatMoney.format(impuestoGanancias)}</p>
             </div>
           </div>
