@@ -15,6 +15,7 @@ const DolarOficial = () => {
     try {
       const data = await fetch('https://criptoya.com/api/dolar');
       const response = await data.json();
+      console.log(response)
       const { oficial } = response;
       return (setDolar(oficial));
     }
@@ -36,7 +37,7 @@ const DolarOficial = () => {
     };
   }, []); // [] asegura que este efecto solo se ejecute una vez al montar el componente.
 
-  const dollarFixed = Number(dolar);
+  const dollarFixed = Number(dolar.price);
 
   const handleToggleUSD = () => {
     setCurrencyUsd(true);
@@ -99,7 +100,7 @@ const DolarOficial = () => {
         </div>
 
         <p className="py-4 border border-[#faf9f9] w-full px-2">
-          Dolar Oficial: ${dollarFixed.toFixed(2)}
+          Dolar Oficial: ${dollarFixed}
         </p>
         <Impuestos
           valueInput={valueInput}

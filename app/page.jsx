@@ -4,10 +4,9 @@ import ShowWebs from "@/Components/ShowWebs";
 
 export default function Home() {
   return (
-    <main className="bg-[#faf9f9] h-full w-full absolute">
+    <main className="bg-[#faf9f9] h-full w-full absolute ">
       <Navbar />
       <HomeSite />
-  
     </main>
   )
 }
