@@ -49,7 +49,7 @@ const Impuestos = ({ valueInput, dollarFixed, isUsd }) => {
               <p>{formatMoney.format(dolarSinImpUsd)}</p>
             </div>
             <div className="flex justify-between w-full">
-              <p>+ Imp. PAIS 30%:</p>
+              <p>+ Imp. PAIS 8%:</p>
               <p>{formatMoney.format(impuestoPaisUsd)}</p>
             </div>
             <div className="flex justify-between w-full">
@@ -94,7 +94,7 @@ const Impuestos = ({ valueInput, dollarFixed, isUsd }) => {
               <p>{formatMoney.format(dolarSinImp)}</p>
             </div>
             <div className="flex justify-between w-full">
-              <p>+ Imp. PAIS 30%:</p>
+              <p>+ Imp. PAIS 8%:</p>
               <p>{formatMoney.format(impuestoPais)}</p>
             </div>
             <div className="flex justify-between w-full">
