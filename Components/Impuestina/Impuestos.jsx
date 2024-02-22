@@ -6,29 +6,29 @@ const Impuestos = ({ valueInput, dollarFixed, isUsd }) => {
 
   /* Renderizado en ARS */
   const dolarSinImp = Number(valueInput);
-  const impuestoPais = Number(dolarSinImp * .3);
+  const impuestoPais = Number(dolarSinImp * .08);
   const impuestoGanancias = Number(dolarSinImp * .3);
-  const impuestoQatar = Number(dolarSinImp * .05);
-  const impuestoBsPs = Number(dolarSinImp * 0)
+  // const impuestoQatar = Number(dolarSinImp * .05);
+  const iva = Number(dolarSinImp * .21)
   /* Renderizado en USD */
   const dolarSinImpUsd = Number(valueInput * dollarFixed);
   const impuestoPaisUsd = Number(dolarSinImpUsd * .3);
   const impuestoGananciasUsd = Number(dolarSinImpUsd * .3);
-  const impuestoQatarUsd = Number(dolarSinImpUsd * .05);
-  const impuestoBsPsUsd = Number(dolarSinImpUsd * 0)
+  // const impuestoQatarUsd = Number(dolarSinImpUsd * .05);
+  const ivaUsd = Number(dolarSinImpUsd * .21)
 
   const sumaTotal = () => {
-    let total = dolarSinImp + impuestoPais + impuestoGanancias + impuestoBsPs;
-    if (agregarQatar) {
-      total += impuestoQatar;
-    }
+    let total = dolarSinImp + impuestoPais + impuestoGanancias + iva;
+    // if (agregarQatar) {
+    //   total += impuestoQatar;
+    // }
     return formatMoney.format(total);
   };
   const sumaTotalUsd = () => {
-    let total = dolarSinImpUsd + impuestoPaisUsd + impuestoGananciasUsd + impuestoBsPsUsd;
-    if (agregarQatar) {
-      total += impuestoQatarUsd;
-    }
+    let total = dolarSinImpUsd + impuestoPaisUsd + impuestoGananciasUsd + ivaUsd;
+    // if (agregarQatar) {
+    //   total += impuestoQatarUsd;
+    // }
     return formatMoney.format(total);
   };
 
@@ -54,7 +54,7 @@ const Impuestos = ({ valueInput, dollarFixed, isUsd }) => {
             </div>
             <div className="flex justify-between w-full">
               <p>+ Imp. Bienes Personales 0%:</p>
-              <p>{formatMoney.format(impuestoBsPsUsd)}</p>
+              <p>{formatMoney.format(ivaUsd)}</p>
             </div>
             <div className="flex justify-between w-full">
               <p>+ Imp. Ganancias 30%:</p>
@@ -69,7 +69,7 @@ const Impuestos = ({ valueInput, dollarFixed, isUsd }) => {
             />
             <p className="mx-2">Incluir Imp. Qatar:</p>
           </div>
-          <div className="pb-2">
+          {/* <div className="pb-2">
             {agregarQatar
               ?
               (<div className="flex justify-between w-full px-2">
@@ -80,7 +80,7 @@ const Impuestos = ({ valueInput, dollarFixed, isUsd }) => {
               </div>)
               :
               (<></>)}
-          </div>
+          </div> */}
           <div className="h-full flex justify-between w-full px-2 border border-y-gray-200 py-4">
             <p>Total: </p>
             <p className="text-2xl text-green-700">{sumaTotalUsd()}</p>
@@ -99,7 +99,7 @@ const Impuestos = ({ valueInput, dollarFixed, isUsd }) => {
             </div>
             <div className="flex justify-between w-full">
               <p>+ Imp. Bienes Personales 0%:</p>
-              <p>{formatMoney.format(impuestoBsPs)}</p>
+              <p>{formatMoney.format(iva)}</p>
             </div>
             <div className="flex justify-between w-full">
               <p>+ Imp. Ganancias 30%:</p>
@@ -114,7 +114,7 @@ const Impuestos = ({ valueInput, dollarFixed, isUsd }) => {
             />
             <p className="mx-2">Incluir Imp. Qatar:</p>
           </div>
-          <div className="pb-2">
+        {/*  <div className="pb-2">
             {agregarQatar
               ?
               (<div className="flex justify-between w-full px-2">
@@ -125,7 +125,7 @@ const Impuestos = ({ valueInput, dollarFixed, isUsd }) => {
               </div>)
               :
               (<></>)}
-          </div>
+          </div> */}
           <div className="h-full flex justify-between w-full px-2 border border-y-gray-200 py-4">
             <p>Total: </p>
             <p className="text-2xl text-green-700">{sumaTotal()}</p>
