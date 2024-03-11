@@ -12,9 +12,9 @@ const Navbar = () => {
   const categories = [
     {
       id: 1,
-      name: 'webs',
-      to: 'webs'
-    },
+      name: 'En Proceso',
+      to: ''
+    }/* ,
     {
       id: 2,
       name: 'quien soy',
@@ -24,7 +24,7 @@ const Navbar = () => {
       id: 3,
       name: 'donar',
       to: 'donate'
-    },
+    }, */
   ];
 
   return (

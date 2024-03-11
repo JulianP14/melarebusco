@@ -61,14 +61,14 @@ const Impuestos = ({ valueInput, dollarFixed, isUsd }) => {
               <p>{formatMoney.format(impuestoGananciasUsd)}</p>
             </div>
           </div>
-          <div className="flex justify-start w-full p-2">
+          {/* <div className="flex justify-start w-full p-2">
             <input
               type="checkbox"
               checked={agregarQatar}
               onChange={() => setAgregarQatar(!agregarQatar)}
             />
             <p className="mx-2">Incluir Imp. Qatar:</p>
-          </div>
+          </div> */}
           {/* <div className="pb-2">
             {agregarQatar
               ?
@@ -106,14 +106,14 @@ const Impuestos = ({ valueInput, dollarFixed, isUsd }) => {
               <p>{formatMoney.format(impuestoGanancias)}</p>
             </div>
           </div>
-          <div className="flex justify-start w-full p-2">
+          {/* <div className="flex justify-start w-full p-2">
             <input
               type="checkbox"
               checked={agregarQatar}
               onChange={() => setAgregarQatar(!agregarQatar)}
             />
             <p className="mx-2">Incluir Imp. Qatar:</p>
-          </div>
+          </div> */}
         {/*  <div className="pb-2">
             {agregarQatar
               ?

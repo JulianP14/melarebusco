@@ -5,11 +5,11 @@ import Impuestos from "./Impuestos";
 
 const DolarOficial = () => {
 
+  console.log('prueba')
   const [dolar, setDolar] = useState('');
   const [valueInput, setValueInput] = useState('');
   const [currencyUsd, setCurrencyUsd] = useState(false);
   const [activeButton, setActiveButton] = useState("ARS");
-
 
   const getDollar = async () => {
     try {
@@ -38,6 +38,7 @@ const DolarOficial = () => {
   }, []); // [] asegura que este efecto solo se ejecute una vez al montar el componente.
 
   const dollarFixed = Number(dolar.price);
+
 
   const handleToggleUSD = () => {
     setCurrencyUsd(true);

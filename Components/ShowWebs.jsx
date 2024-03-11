@@ -24,7 +24,7 @@ const ShowWebs = () => {
     {
       image: '/assets/impuestina.jpg',
       name: 'Impuestina',
-      description: 'Esta app te permite calcular cuánto tendrías que pagar por un servicio en USD o en pesos con impuestos.',
+      description: 'Esta app te permite calcular cuánto tendrías que pagar por un servicio en USD o en ARS con impuestos.',
       id: 3,
       icon: '💰',
       to: '/impuestina'

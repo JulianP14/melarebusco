@@ -1,31 +1,36 @@
 'use client'
 
 import { useEffect, useState } from "react";
+// import DolarOficial from "../Impuestina/DolarOficial";
 
 const Cotizacion = () => {
   const [dolar, setDolar] = useState('');
+
   const [dolarMep, setDolarMep] = useState('');
   const [dolarCCL, setDolarCCL] = useState('');
-  const [dolarSolidario, setDolarSolidario] = useState('');
+  const [dolarTarjeta, setDolarTarjeta] = useState('');
   const [dolarBlue, setDolarBlue] = useState('');
   const [dolarBlueBid, setDolarBlueBid] = useState('');
+
 
   const getDollar = async () => {
     try {
       const data = await fetch('https://criptoya.com/api/dolar');
       const response = await data.json();
-      const { oficial, mep, ccl, solidario, blue, blue_bid } = response;
-      console.log(response)
-      setDolar(oficial);
-      setDolarMep(mep);
-      setDolarCCL(ccl);
-      setDolarSolidario(solidario);
-      setDolarBlue(blue);
-      setDolarBlueBid(blue_bid)
+      const { oficial, mep, ccl, blue, tarjeta } = response;
+      //console.log(response)
+      setDolar(oficial.price);
+      setDolarMep(mep.al30.ci.price);
+      setDolarCCL(ccl.al30.ci.price);
+      setDolarTarjeta(tarjeta.price);
+      setDolarBlue(blue.ask);
+      setDolarBlueBid(blue.bid)
+
     } catch (error) {
       return error
     }
   }
+
   useEffect(() => {
     // Llamada inicial al montar el componente
     getDollar();
@@ -42,10 +47,9 @@ const Cotizacion = () => {
   const dollarFixed = Number(dolar).toFixed(2);
   const dollarMepFixed = Number(dolarMep).toFixed(2);
   const dollarCCLFixed = Number(dolarCCL).toFixed(2);
-  const dollarSolidarioFixed = Number(dolarSolidario).toFixed(2);
+  const dollarTarjetaFixed = Number(dolarTarjeta).toFixed(2);
   const dollarBlueFixed = Number(dolarBlue).toFixed(2);
   const dollarBlueBidFixed = Number(dolarBlueBid).toFixed(2);
-
 
   const dollars = [
     {
@@ -66,7 +70,7 @@ const Cotizacion = () => {
     {
       id: 4,
       name: 'Dolar Tarjeta:',
-      dollar: dollarSolidarioFixed,
+      dollar: dollarTarjetaFixed,
     }
   ]
 
