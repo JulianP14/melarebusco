@@ -2,7 +2,7 @@ import { useState } from "react";
 
 const Impuestos = ({ valueInput, dollarFixed, isUsd }) => {
 
-  const [agregarQatar, setAgregarQatar] = useState(true);
+  // const [agregarQatar, setAgregarQatar] = useState(true);
 
   /* Renderizado en ARS */
   const dolarSinImp = Number(valueInput);
@@ -12,7 +12,7 @@ const Impuestos = ({ valueInput, dollarFixed, isUsd }) => {
   const iva = Number(dolarSinImp * .21)
   /* Renderizado en USD */
   const dolarSinImpUsd = Number(valueInput * dollarFixed);
-  const impuestoPaisUsd = Number(dolarSinImpUsd * .3);
+  const impuestoPaisUsd = Number(dolarSinImpUsd * .08);
   const impuestoGananciasUsd = Number(dolarSinImpUsd * .3);
   // const impuestoQatarUsd = Number(dolarSinImpUsd * .05);
   const ivaUsd = Number(dolarSinImpUsd * .21)

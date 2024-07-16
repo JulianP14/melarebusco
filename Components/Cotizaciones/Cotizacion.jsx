@@ -18,7 +18,7 @@ const Cotizacion = () => {
       const data = await fetch('https://criptoya.com/api/dolar');
       const response = await data.json();
       const { oficial, mep, ccl, blue, tarjeta } = response;
-      //console.log(response)
+      // console.log(response)
       setDolar(oficial.price);
       setDolarMep(mep.al30.ci.price);
       setDolarCCL(ccl.al30.ci.price);
