@@ -70,7 +70,7 @@ const Result = ({ contadoCuotas, cuotasFijasInt }) => {
                 (
                   <>
                     <p>
-                      Si hubieras elegido de contado, tendrias que pagar de más un:
+                      Si hubieras elegido de contado, tendrias que pagar en relación al valor inicial un:
                     </p>
                     <p className='text-red-600 text-4xl outline-none my-4 hover:scale-110 duration-300'>
                       %{Number(cC / cFi * 100).toFixed(2)}
