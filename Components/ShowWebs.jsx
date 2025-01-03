@@ -32,10 +32,10 @@ const ShowWebs = () => {
   ]
 
   return (
-    <section className="flex flex-col items-center px-14 w-[500px] md:w-[600px] lg:w-[1180px] xl:w-[1400px] my-4">
-      <div className="border-gray-400 w-full h-full flex flex-col items-stretch gap-10 lg:flex-row lg:w-full xl:gap-12  ">
+    <section className="flex flex-col items-center px-14 w-[500px] md:w-[600px] lg:w-[1180px] xl:w-[1400px] my-4 ">
+      <div className="border-gray-400 w-full h-full flex flex-col items-stretch gap-10 lg:flex-row lg:w-full xl:gap-12">
         {webs.map(({ image, name, description, id, icon, to }) => (
-          <div className="flex flex-col items-center py-4 border rounded-xl gap-6 px-6 boxShadow w-full" key={id}>
+          <div className="flex flex-col items-center py-4 border rounded-xl gap-6 px-6 boxShadow w-full justify-around" key={id}>
             <div className="flex flex-col items-center rounded-xl">
               <Image
                 src={image}
@@ -46,8 +46,8 @@ const ShowWebs = () => {
               />
             </div>
             <div className="text-gray-600 flex flex-col items-center gap-2 px-2">
-              <h2 className="text-2xl font-bold">{name} {icon}</h2>
-              <p className="text-center text-md">{description}</p>
+              <h2 className="text-xl font-bold text-slate-500">{name} {icon}</h2>
+              <p className="text-center text-md text-slate-500">{description}</p>
             </div>
             <Link
               href={to}

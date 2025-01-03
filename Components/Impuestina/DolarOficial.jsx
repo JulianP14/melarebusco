@@ -96,7 +96,6 @@ const DolarOficial = () => {
             </button>
           </div>
         </div>
-
         <p className="py-4 border border-[#faf9f9] w-full px-2">
           Dolar Oficial: ${dollarFixed}
         </p>

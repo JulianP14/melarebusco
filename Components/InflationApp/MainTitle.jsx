@@ -1,9 +1,15 @@
 import Image from "next/image"
+import DarkSite from "../DarkSite/DarkSite";
+import { useTheme } from "@/context/ThemeContext";
 
 const MainTitle = () => {
+
+    const { dark, toggleDarkMode } = useTheme();
+    const themeClass = dark ? 'bg-[#faf9f9]' : 'bg-[#faf9f9]';
+
     return (
         <div className='flex flex-col justify-center items-center'>
-            <div className='rounded-full border-2 p-2 shadow-lg'>
+            <div className={`rounded-full border-2 p-2 shadow-lg ${themeClass}`}>
                 <Image
                     src={'/assets/impuestina.svg'}
                     width={80}

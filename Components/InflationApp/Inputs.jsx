@@ -97,17 +97,10 @@ const Inputs = () => {
                 setIsReady(true)
             }, 1000);
             const handleInflacion = (tasaMensual, meses) => {
-                // console.log(meses)
-                // console.log(tasaMensual)
                 const factorInflacion = 1 + tasaMensual / 100;
-                // console.log(factorInflacion)
                 const finalValue = Math.pow(factorInflacion, meses);
-                // console.log(finalValue)
-                // console.log(contado)
                 const contadoCuotasInflacion = (contado * finalValue / meses)
-                // console.log(contadoCuotasInflacion)
                 setContadoCuotas(contadoCuotasInflacion);
-
                 const cuotasFijas = (montoCuotas / meses)
                 setCuotasFijasInt(cuotasFijas);
             }
