@@ -1,5 +1,5 @@
 
-const InputAmountCuotation = ({ onChange }) => {
+const InputAmountQuotation = ({ onChange }) => {
     return (
         <div className='flex flex-col my-2'>
             <label className='flex flex-col my-2'>
@@ -18,4 +18,4 @@ const InputAmountCuotation = ({ onChange }) => {
     )
 };
 
-export default InputAmountCuotation;
+export default InputAmountQuotation;

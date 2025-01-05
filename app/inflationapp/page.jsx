@@ -10,7 +10,7 @@ export default function InflationApp() {
   const themeClass = dark ? 'bg-[#121212] text-white' : 'bg-[#faf9f9] text-black';
 
   return (
-    <main className={`w-full ${themeClass}`}>
+    <main className={`w-full ${themeClass} `}>
       <HomeSite />
       <div className="absolute top-4 right-4">
         <DarkSite />

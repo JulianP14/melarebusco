@@ -7,7 +7,7 @@ import Link from 'next/link';
 const HowWeDoIt = () => {
   const { dark, toggleDarkMode } = useTheme();
 
-  const themeClass = dark ? 'bg-[#121212] text-white' : 'bg-[#faf9f9] text-black';
+  const themeClass = dark ? 'bg-[#121212] text-white' : 'bg-[#faf9f9] text-white';
 
   return (
     <div className={`w-screen min-h-screen ${themeClass} flex flex-col`}>

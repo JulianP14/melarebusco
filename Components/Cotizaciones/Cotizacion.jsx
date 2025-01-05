@@ -1,6 +1,8 @@
 'use client'
 
 import { useEffect, useState } from "react";
+import { useTheme } from "@/context/ThemeContext";
+import DarkSite from "../DarkSite/DarkSite";
 // import DolarOficial from "../Impuestina/DolarOficial";
 
 const Cotizacion = () => {
@@ -11,6 +13,11 @@ const Cotizacion = () => {
   const [dolarTarjeta, setDolarTarjeta] = useState('');
   const [dolarBlue, setDolarBlue] = useState('');
   const [dolarBlueBid, setDolarBlueBid] = useState('');
+
+  const { dark, toggleDarkMode } = useTheme();
+  const themeClass = dark ? 'text-white' : 'text-[#101419]';
+  //  bg-gradient-to-r from-[#101419] via-70% to-[#136F63] bg-clip-text text-transparent => Codigo p/ hacer el texto gradiente
+  
 
 
   const getDollar = async () => {
@@ -34,15 +41,13 @@ const Cotizacion = () => {
   useEffect(() => {
     // Llamada inicial al montar el componente
     getDollar();
-
-    // Configurar intervalo para llamadas periódicas
+    // Configura el intervalo para las llamadas periódicas
     const intervalId = setInterval(getDollar, 60000);
-
     // Limpia el intervalo cuando el componente se desmonta
     return () => {
       clearInterval(intervalId);
     };
-  }, []); // [] asegura que este efecto solo se ejecute una vez al montar el componente
+  }, []); // [] = este efecto solo se ejecute una vez al montar el componente
 
   const dollarFixed = Number(dolar).toFixed(2);
   const dollarMepFixed = Number(dolarMep).toFixed(2);
@@ -75,17 +80,17 @@ const Cotizacion = () => {
   ]
 
   return (
-    <section className="w-full px-10 my-5">
+    <section className={` w-full px-10 my-5`}>
       <div className="flex flex-col items-center gap-10 w-full">
         <div className="flex flex-col items-center border-2 border-green-800 rounded-lg px-5 py-4 shadow-xl w-[350px]">
-          <div className="">
-            <h2 className="text-3xl bg-gradient-to-r from-[#101419] via-70% to-[#168374] bg-clip-text text-transparent font-bold text-center py-4">Dolar Blue:</h2>
+          <div className={`${themeClass}`}>
+            <h2 className={`text-3xl font-bold text-center py-4`}>Dolar Blue:</h2>
             <div className="flex items-center gap-8 text-xl py-4">
-              <div className="flex-col text-lg font-semibold text-black hover:text-xl transition-all">
+              <div className={`flex-col text-lg font-semibold hover:text-xl transition-all`}>
                 <p>Compra:</p>
                 <p>${dollarBlueBidFixed}</p>
               </div>
-              <div className="flex-col text-lg font-semibold text-black hover:text-xl  transition-all">
+              <div className="flex-col text-lg font-semibold hover:text-xl  transition-all">
                 <p>Venta:</p>
                 <p>${dollarBlueFixed}</p>
               </div>
@@ -99,10 +104,10 @@ const Cotizacion = () => {
               className=" w-[300px] border-t-2 border-green-800 rounded-lg px-5 py-4 my-4 shadow-xl"
             >
               <div className="flex flex-col items-center">
-                <h2 className="text-2xl border-b-2 rounded-lg border-green-800 bg-gradient-to-r from-[#101419] via-70% to-[#168374] bg-clip-text text-transparent font-bold">{name}</h2>
+                <h2 className="text-2xl border-b-2 rounded-lg border-green-800 font-bold">{name}</h2>
                 <div className="flex justify-center py-2">
                   <div className="flex-col items-center">
-                    <p className="text-lg font-medium text-black hover:text-xl transition-all">${dollar}</p>
+                    <p className="text-lg font-medium hover:text-xl transition-all">${dollar}</p>
                   </div>
                 </div>
               </div>
