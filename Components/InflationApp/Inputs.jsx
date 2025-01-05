@@ -5,7 +5,7 @@ import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 
 import CalculateButton from "./CalculateButton";
-import InputCuotation from "./InputCuotation";
+import InputQuotation from "./InputQuotation";
 import InputInflation from "./InputInflation";
 import InputAmountQuotation from "./InputAmountQuotation";
 import InputAmountNow from "./InputAmountNow";
@@ -132,7 +132,7 @@ const Inputs = () => {
                         <InputInflation
                             onChange={handlePorcentaje}
                         />
-                        <InputCuotation
+                        <InputQuotation
                             cuotas={cuotas}
                             onChange={handleCuotas}
                         />

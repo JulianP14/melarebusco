@@ -1,5 +1,5 @@
 
-const InputCuotation = ({ cuotas, onChange }) => {
+const InputQuotation = ({ cuotas, onChange }) => {
     const options = [
         1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 18, 24, 48
     ];
@@ -23,4 +23,4 @@ const InputCuotation = ({ cuotas, onChange }) => {
     )
 };
 
-export default InputCuotation;
+export default InputQuotation;
